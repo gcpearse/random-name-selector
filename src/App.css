@@ -1,4 +1,53 @@
 * {
   margin: 0;
   text-align: center;
+  font-family: Happy Monkey;
+  color: #0c0f0a;
+}
+
+#root {
+  position: relative;
+  min-height: 100vh;
+  background: linear-gradient(-45deg, #FF206E, #FBFF12, #41EAD4);
+  background-size: 400% 400%;
+  animation: gradient 5s infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+h1 {
+  margin: auto;
+  border-radius: 50px;
+  padding: 0.6em 0.4em;
+  background: #FF006E;
+  font-size: 2.5rem;
+  max-width: 80vw;
+  color: #FFFFFF;
+  box-shadow: 0 0 2px 4px #FFFFFF;
+}
+
+header {
+  padding: 2em 0;
+}
+
+main {
+  padding-bottom: 6em;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  background: #0c0f0a;
+  height: 6em;
+  width: 100%;
 }
