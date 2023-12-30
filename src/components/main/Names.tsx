@@ -36,20 +36,23 @@ const People = () => {
     }
   }
 
+  const handleClick = () => {
+    setPeople([])
+  }
+
   return (
     <section>
       <form
         onSubmit={handleSubmit}
         onBlur={() => setError(null)}>
-        <label htmlFor="name-input">Add a name?
-          <input
-            type="text"
-            id="name-input"
-            placeholder="Enter a name..."
-            value={input}
-            onChange={handleChange} />
-        </label>
-        <button>Add</button>
+        <label htmlFor="name-input">Add a name?</label>
+        <input
+          type="text"
+          id="name-input"
+          placeholder="Enter a name..."
+          value={input}
+          onChange={handleChange} />
+        <button className="form-btn">Add</button>
       </form>
       {error ? <p>{error}</p> : null}
       <ul>
@@ -57,6 +60,9 @@ const People = () => {
           return <li key={person.id}>{person.name}</li>
         })}
       </ul>
+      <button onClick={handleClick}>
+        Reset
+      </button>
     </section>
   )
 }
