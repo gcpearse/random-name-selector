@@ -45,7 +45,9 @@ const People = () => {
       <form
         onSubmit={handleSubmit}
         onBlur={() => setError(null)}>
-        <label htmlFor="name-input">Add a name?</label>
+        <label htmlFor="name-input">
+          Add a name?
+        </label>
         <input
           type="text"
           id="name-input"
@@ -56,11 +58,17 @@ const People = () => {
       </form>
       {error ? <p>{error}</p> : null}
       <ul>
+        <h2>
+          Your list
+        </h2>
+        {!people.length ? <p id="ul-msg">No names yet!</p> : null}
         {people.map((person) => {
           return <li key={person.id}>{person.name}</li>
         })}
       </ul>
-      <button onClick={handleClick}>
+      <button
+        id="reset-btn"
+        onClick={handleClick}>
         Reset
       </button>
     </section>
