@@ -1,13 +1,13 @@
 import './App.css'
 import Header from './components/Header'
-import People from './components/main/Names'
+import Main from './components/main/Main'
 import Footer from './components/Footer'
 
 function App() {
   return (
     <>
       <Header />
-      <People />
+      <Main />
       <Footer />
     </>
   )

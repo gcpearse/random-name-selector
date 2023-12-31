@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-const People = () => {
+const Main = () => {
 
   type Person = {
     id: number,
@@ -120,4 +120,4 @@ const People = () => {
   )
 }
 
-export default People
+export default Main
