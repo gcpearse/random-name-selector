@@ -31,7 +31,7 @@
 h1 {
   margin: auto;
   border-radius: 50px 0 50px 0;
-  padding: 0.6em 0.4em;
+  padding: 4% 6%;
   background: #FF006E;
   font-size: 2.5rem;
   max-width: 80vw;
@@ -52,10 +52,10 @@ form {
   display: flex;
   flex-direction: column;
   margin: auto;
-  padding: 0.6em 0.4em;
+  padding: 4% 6%;
   background: #3A86FF;
   color: #FFFFFF;
-  max-width: 84vw;
+  max-width: 80vw;
   box-shadow: 0 0 2px 4px #FFFFFF;
 }
 
@@ -94,9 +94,9 @@ button:hover {
 
 ul {
   margin: 1.5em auto;
-  padding: 0.6em 0.4em;
+  padding: 4% 6%;
   background: #FB5607;
-  max-width: 84vw;
+  max-width: 80vw;
   list-style-type: none;
   box-shadow: 0 0 2px 4px #FFFFFF;
 }
@@ -127,12 +127,38 @@ li {
   color: #0c0f0a;
 }
 
-#reset-btn {
+#btn-container {
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  padding: 4% 6%;
+  max-width: 80vw;
+}
+
+.main-btn  {
   border: none;
   border-radius: 10px;
-  padding: 0.4em 0.8em;
-  background: #8338EC;
+  padding: 0.6em 0.8em;
   font-size: 1.3rem;
+  box-shadow: 0 0 2px 4px #FFFFFF;
+  width: 45%;
+}
+
+#select-btn {
+  background: #FF006E;
+}
+
+#reset-btn {
+  background: #8338EC;
+}
+
+#selected-name {
+  margin: 1.5rem auto;
+  padding: 4% 6%;
+  background: #3A86FF;
+  font-size: 2rem;
+  box-shadow: 0 0 2px 4px #FFFFFF;
+  max-width: 80vw;
 }
 
 footer {
