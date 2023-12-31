@@ -57,7 +57,7 @@ form {
   box-shadow: 0 0 2px 4px #FFFFFF;
 }
 
-label, input, .form-btn {
+label, input, .form-btn, .error-msg {
   margin: 0.5em auto;
 }
 

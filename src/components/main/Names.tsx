@@ -54,9 +54,11 @@ const People = () => {
           placeholder="Enter a name..."
           value={input}
           onChange={handleChange} />
-        <button className="form-btn">Add</button>
+        <button className="form-btn">
+          Add
+        </button>
+        {error ? <p className="error-msg">{error}</p> : null}
       </form>
-      {error ? <p>{error}</p> : null}
       <ul>
         <h2>
           Your list
