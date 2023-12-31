@@ -12,6 +12,7 @@ const People = () => {
   const [people, setPeople] = useState<People>([])
   const [personID, setPersonID] = useState(0)
   const [input, setInput] = useState("")
+  const [choice, setChoice] = useState("")
   const [error, setError] = useState<string | null>(null)
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -43,10 +44,6 @@ const People = () => {
     }
   }
 
-  const handleReset = () => {
-    setPeople([])
-  }
-
   const handleDelete = (id: number) => {
     setPeople((currentPeople) => {
       const people = [...currentPeople]
@@ -54,6 +51,16 @@ const People = () => {
         return person.id !== id
       })
     })
+  }
+
+  const handleSelect = () => {
+    const selectedPerson = people[Math.floor(Math.random() * people.length)]
+    setChoice(selectedPerson.name)
+  }
+
+  const handleReset = () => {
+    setPeople([])
+    setChoice("")
   }
 
   return (
@@ -92,11 +99,21 @@ const People = () => {
           </li>
         })}
       </ul>
-      <button
-        id="reset-btn"
-        onClick={handleReset}>
-        Reset
-      </button>
+      <div id="btn-container">
+        <button
+          id="select-btn"
+          className="main-btn"
+          onClick={handleSelect}>
+          Pick name
+        </button>
+        <button
+          id="reset-btn"
+          className="main-btn"
+          onClick={handleReset}>
+          Reset
+        </button>
+      </div>
+      {choice ? <p id="selected-name">{choice}</p> : null}
     </section>
   )
 }
