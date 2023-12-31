@@ -2,61 +2,44 @@
   margin: 0;
   text-align: center;
   font-family: Happy Monkey;
-  color: #FFFFFF;
+  color: #333333;
 }
 
 #root {
   position: relative;
+  background: #FFFFFF;
   min-height: 100vh;
-  background: linear-gradient(-45deg, #FF206E, #FBFF12, #41EAD4);
-  background-size: 400% 400%;
-  animation: gradient 10s ease infinite;
   padding-bottom: 7.5em;
 }
 
-@keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-
-  50% {
-    background-position: 100% 50%;
-  }
-
-  100% {
-    background-position: 0% 50%;
-  }
+h1, form, ul, #selected-name {
+  padding: 4% 6%;
+  box-shadow: 0 0 6px 1px #100C08;
 }
 
 h1 {
   margin: auto;
-  border-radius: 50px 0 50px 0;
-  padding: 4% 6%;
-  background: #FF006E;
+  background: #223561;
   font-size: 2.5rem;
-  max-width: 80vw;
-  box-shadow: 0 0 2px 4px #FFFFFF;
+  color: #F2F2F2;
 }
 
 h2 {
   margin: 0.4em auto 0.8em;
   text-decoration: 3px underline;
   text-underline-offset: 6px;
+  font-size: 1.8rem;
 }
 
 header {
-  padding: 1.5em 0;
+  padding: 0 0 1.5em;
 }
 
 form {
   display: flex;
   flex-direction: column;
   margin: auto;
-  padding: 4% 6%;
-  background: #3A86FF;
-  color: #FFFFFF;
-  max-width: 80vw;
-  box-shadow: 0 0 2px 4px #FFFFFF;
+  background: #FFEECA;
 }
 
 label,
@@ -71,11 +54,11 @@ label {
 }
 
 input {
-  border: none;
+  border: 2px solid #333333;
   border-radius: 5px;
   line-height: 2rem;
   width: 60%;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   color: #0c0f0a;
 }
 
@@ -87,18 +70,15 @@ button:hover {
   border: none;
   border-radius: 50px;
   padding: 0.4em 0.8em;
-  background: #FFBE0B;
-  font-size: 1.1rem;
-  color: #0c0f0a;
+  background: #3066BE;
+  font-size: 1.2rem;
+  color: #F2F2F2;
 }
 
 ul {
   margin: 1.5em auto;
-  padding: 4% 6%;
-  background: #FB5607;
-  max-width: 80vw;
+  background: #FFEECA;
   list-style-type: none;
-  box-shadow: 0 0 2px 4px #FFFFFF;
 }
 
 #ul-msg,
@@ -111,6 +91,7 @@ li {
   display: grid;
   grid-template-columns: 4fr 1fr;
   width: 80%;
+  font-size: 1.4rem;
 }
 
 #list-element {
@@ -119,12 +100,16 @@ li {
 
 #delete-btn {
   margin: auto 0 auto auto;
-  border: 0;
-  border-radius: 100%;
+  border: 2px solid #333333;
+  border-radius: 6px;
+  padding: 0.2em 0.4em;
   background: #FFFFFF;
-  height: 25px;
-  width: 25px;
   color: #0c0f0a;
+  font-size: 1.2rem;
+}
+
+#delete-btn:hover {
+  background: #CCCCCC;
 }
 
 #btn-container {
@@ -144,21 +129,28 @@ li {
   width: 45%;
 }
 
+.main-btn:hover, .form-btn:hover {
+  opacity: 80%;
+}
+
+.main-btn:active, .form-btn:active {
+  box-shadow: 0 0 1px 1px #333333;
+}
+
 #select-btn {
-  background: #FF006E;
+  background: #3066BE;
+  color: #F6F6F4;
 }
 
 #reset-btn {
-  background: #8338EC;
+  background: #8C235A;
+  color: #F6F6F4;
 }
 
 #selected-name {
   margin: 1.5rem auto;
-  padding: 4% 6%;
-  background: #3A86FF;
+  background: #E3E3DC;
   font-size: 2rem;
-  box-shadow: 0 0 2px 4px #FFFFFF;
-  max-width: 80vw;
 }
 
 footer {
