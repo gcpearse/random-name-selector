@@ -96,7 +96,7 @@ const People = () => {
             <button
               id="delete-btn"
               onClick={() => handleDelete(person.id)}>
-              X
+              Remove
             </button>
           </li>
         })}
