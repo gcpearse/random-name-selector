@@ -54,8 +54,10 @@ const People = () => {
   }
 
   const handleSelect = () => {
-    const selectedPerson = people[Math.floor(Math.random() * people.length)]
-    setChoice(selectedPerson.name)
+    if (people.length) {
+      const selectedPerson = people[Math.floor(Math.random() * people.length)]
+      setChoice(selectedPerson.name)
+    }
   }
 
   const handleReset = () => {
