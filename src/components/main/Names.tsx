@@ -21,16 +21,23 @@ const People = () => {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (input) {
-      setPeople((currentPeople) => {
-        setPersonID((currentValue) => {
-          return currentValue + 1
+      if (people.every((person) => {
+        return person.name !== input
+      })) {
+        setPeople((currentPeople) => {
+          setPersonID((currentValue) => {
+            return currentValue + 1
+          })
+          return [...currentPeople, {
+            id: personID,
+            name: input
+          }]
         })
-        return [...currentPeople, {
-          id: personID,
-          name: input
-        }]
-      })
-      setInput("")
+        setError(null)
+        setInput("")
+      } else {
+        setError("No duplicate names!")
+      }
     } else {
       setError("Please enter a name!")
     }
