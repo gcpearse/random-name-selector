@@ -43,8 +43,17 @@ const People = () => {
     }
   }
 
-  const handleClick = () => {
+  const handleReset = () => {
     setPeople([])
+  }
+
+  const handleDelete = (id: number) => {
+    setPeople((currentPeople) => {
+      const people = [...currentPeople]
+      return people.filter((person) => {
+        return person.id !== id
+      })
+    })
   }
 
   return (
@@ -59,6 +68,7 @@ const People = () => {
           type="text"
           id="name-input"
           placeholder="Enter a name..."
+          maxLength={15}
           value={input}
           onChange={handleChange} />
         <button className="form-btn">
@@ -72,12 +82,19 @@ const People = () => {
         </h2>
         {!people.length ? <p id="ul-msg">No names yet!</p> : null}
         {people.map((person) => {
-          return <li key={person.id}>{person.name}</li>
+          return <li key={person.id}>
+            <p id="list-element">{person.name}</p>
+            <button
+              id="delete-btn"
+              onClick={() => handleDelete(person.id)}>
+              X
+            </button>
+          </li>
         })}
       </ul>
       <button
         id="reset-btn"
-        onClick={handleClick}>
+        onClick={handleReset}>
         Reset
       </button>
     </section>
