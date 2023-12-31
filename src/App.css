@@ -18,9 +18,11 @@
   0% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
+
   100% {
     background-position: 0% 50%;
   }
@@ -57,7 +59,10 @@ form {
   box-shadow: 0 0 2px 4px #FFFFFF;
 }
 
-label, input, .form-btn, .error-msg {
+label,
+input,
+.form-btn,
+.error-msg {
   margin: 0.5em auto;
 }
 
@@ -96,9 +101,30 @@ ul {
   box-shadow: 0 0 2px 4px #FFFFFF;
 }
 
-#ul-msg, li {
+#ul-msg,
+li {
   margin: 0.6em auto;
   font-size: 1.2rem;
+}
+
+li {
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  width: 80%;
+}
+
+#list-element {
+  margin: auto auto auto 0;
+}
+
+#delete-btn {
+  margin: auto 0 auto auto;
+  border: 0;
+  border-radius: 100%;
+  background: #FFFFFF;
+  height: 25px;
+  width: 25px;
+  color: #0c0f0a;
 }
 
 #reset-btn {
