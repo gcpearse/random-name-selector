@@ -1,11 +1,7 @@
 import { useState } from "react"
+import { Person } from "../../models"
 
 const Main = () => {
-
-  type Person = {
-    id: number,
-    name: string
-  }
 
   type People = Person[]
 
