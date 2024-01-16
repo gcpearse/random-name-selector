@@ -1,44 +1,11 @@
 import { useState } from "react"
 import { Person } from "../../models"
+import NameAdder from "./NameAdder"
 
 const Main: React.FC = () => {
 
-  type People = Person[]
-
-  const [people, setPeople] = useState<People>([])
-  const [personID, setPersonID] = useState<number>(0)
-  const [input, setInput] = useState<string>("")
+  const [people, setPeople] = useState<Person[]>([])
   const [choice, setChoice] = useState<string>("")
-  const [error, setError] = useState<string | null>(null)
-
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setInput(event.target.value)
-  }
-
-  const handleSubmit = (event: React.FormEvent): void => {
-    event.preventDefault();
-    if (input) {
-      if (people.every((person) => {
-        return person.name !== input
-      })) {
-        setPeople((currentPeople) => {
-          setPersonID((currentValue) => {
-            return currentValue + 1
-          })
-          return [...currentPeople, {
-            id: personID,
-            name: input
-          }]
-        })
-        setError(null)
-        setInput("")
-      } else {
-        setError("No duplicate names!")
-      }
-    } else {
-      setError("Please enter a name!")
-    }
-  }
 
   const handleDelete = (id: number): void => {
     setPeople((currentPeople) => {
@@ -63,24 +30,7 @@ const Main: React.FC = () => {
 
   return (
     <section>
-      <form
-        onSubmit={handleSubmit}
-        onBlur={() => setError(null)}>
-        <label htmlFor="name-input">
-          Add a name?
-        </label>
-        <input
-          type="text"
-          id="name-input"
-          placeholder="Enter a name..."
-          maxLength={15}
-          value={input}
-          onChange={handleChange} />
-        <button className="form-btn">
-          Add
-        </button>
-        {error ? <p className="error-msg">{error}</p> : null}
-      </form>
+      <NameAdder people={people} setPeople={setPeople} />
       <ul>
         <h2>
           Your list
