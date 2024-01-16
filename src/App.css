@@ -60,10 +60,23 @@ input {
   width: 60%;
   font-size: 1.3rem;
   color: #0c0f0a;
+  transition: 0.3s;
+}
+
+input:focus {
+  line-height: 2.7rem;
+}
+
+button {
+  transition: 0.2s;
 }
 
 button:hover {
   cursor: pointer;
+}
+
+button:active {
+  transform: scale(0.9);
 }
 
 .form-btn {
