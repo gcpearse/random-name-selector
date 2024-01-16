@@ -2,7 +2,7 @@ import { useState } from "react"
 import { Person } from "../../models"
 import NameAdder from "./NameAdder"
 import NameList from "./NameList"
-import NameChooser from "./NameChooser"
+import NameSelector from "./NameSelector"
 
 const Contents: React.FC = () => {
 
@@ -12,7 +12,7 @@ const Contents: React.FC = () => {
     <section>
       <NameAdder people={people} setPeople={setPeople} />
       <NameList people={people} setPeople={setPeople} />
-      <NameChooser people={people} setPeople={setPeople} />
+      <NameSelector people={people} setPeople={setPeople} />
     </section>
   )
 }
