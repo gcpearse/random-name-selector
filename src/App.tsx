@@ -1,13 +1,13 @@
 import './App.css'
 import Header from './components/Header'
-import Main from './components/main/Main'
+import Contents from './components/contents/Contents'
 import Footer from './components/Footer'
 
 function App() {
   return (
     <>
       <Header />
-      <Main />
+      <Contents />
       <Footer />
     </>
   )
