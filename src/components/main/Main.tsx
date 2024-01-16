@@ -1,21 +1,21 @@
 import { useState } from "react"
 import { Person } from "../../models"
 
-const Main = () => {
+const Main: React.FC = () => {
 
   type People = Person[]
 
   const [people, setPeople] = useState<People>([])
-  const [personID, setPersonID] = useState(0)
-  const [input, setInput] = useState("")
-  const [choice, setChoice] = useState("")
+  const [personID, setPersonID] = useState<number>(0)
+  const [input, setInput] = useState<string>("")
+  const [choice, setChoice] = useState<string>("")
   const [error, setError] = useState<string | null>(null)
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setInput(event.target.value)
   }
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (event: React.FormEvent): void => {
     event.preventDefault();
     if (input) {
       if (people.every((person) => {
@@ -40,7 +40,7 @@ const Main = () => {
     }
   }
 
-  const handleDelete = (id: number) => {
+  const handleDelete = (id: number): void => {
     setPeople((currentPeople) => {
       const people = [...currentPeople]
       return people.filter((person) => {
@@ -49,14 +49,14 @@ const Main = () => {
     })
   }
 
-  const handleSelect = () => {
+  const handleSelect = (): void => {
     if (people.length) {
       const selectedPerson = people[Math.floor(Math.random() * people.length)]
       setChoice(selectedPerson.name)
     }
   }
 
-  const handleReset = () => {
+  const handleReset = (): void => {
     setPeople([])
     setChoice("")
   }
